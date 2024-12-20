@@ -1,0 +1,79 @@
+[gd_scene load_steps=12 format=3 uid="uid://8l7ob500dvly"]
+
+[ext_resource type="Texture2D" uid="uid://dyasm1fruq87r" path="res://assets/img/obstacles/Bird.png" id="1_b8kua"]
+[ext_resource type="Script" path="res://bird.gd" id="1_ikcw6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2mq0i"]
+atlas = ExtResource("1_b8kua")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gxlbl"]
+atlas = ExtResource("1_b8kua")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qwdly"]
+atlas = ExtResource("1_b8kua")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sibf1"]
+atlas = ExtResource("1_b8kua")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_otpcl"]
+atlas = ExtResource("1_b8kua")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h8c3m"]
+atlas = ExtResource("1_b8kua")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_k4p0t"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2mq0i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gxlbl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qwdly")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sibf1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_otpcl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h8c3m")
+}],
+"loop": true,
+"name": &"Flying",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_plqbj"]
+size = Vector2(40, 39)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ornu6"]
+radius = 25.0
+height = 82.0
+
+[node name="Bird" type="Area2D"]
+script = ExtResource("1_ikcw6")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_k4p0t")
+animation = &"Flying"
+frame_progress = 0.367934
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-28, 2.5)
+shape = SubResource("RectangleShape2D_plqbj")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(17, 0)
+shape = SubResource("CapsuleShape2D_ornu6")
