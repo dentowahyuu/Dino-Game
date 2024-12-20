@@ -21,7 +21,7 @@ A simple 2D endless runner game built with Godot Engine, inspired by the offline
 
 ## How to Play
 
-1. Press the **spacebar** or **up arrow** to make the dino jump.
+1. Press the **spacebar** to make the dino jump.
 2. Press the **down arrow** to duck under obstacles.
 3. Avoid hitting obstacles to keep running and achieve the highest score possible.
 
