@@ -29,4 +29,4 @@ A simple 2D endless runner game built with Godot Engine, inspired by the offline
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/dino-game-godot.git
+   git clone https://github.com/dentowahyuu/Dino-Game.git
